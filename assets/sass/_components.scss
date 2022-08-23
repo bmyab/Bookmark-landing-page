@@ -1,0 +1,102 @@
+@use 'utils' as u;
+@use 'mixins' as m;
+
+.paragraph{
+  color:  u.$GrayishBlue;
+  line-height: 1.5;
+  max-width: 60rem;
+  text-align: center;
+
+  &-sm{
+    font-size: 1.5rem;
+    @extend .paragraph;
+    padding-top: 1rem;
+  }
+  @media (min-width:1400px){
+    max-width: 45rem;
+    padding-top: 2rem;
+  }
+}
+.container{
+  width: calc(100% - 14%);
+  margin-inline: auto;
+  max-width: 140rem;
+}
+.mb{
+  margin-block: 10rem;
+}
+.mb-8{
+  margin-block: 8rem;
+
+  @media (min-width:1200px) {
+    margin-block: 15rem;
+  }
+}
+
+.subtitle{
+  color: u.$VeryDarkBlue;
+  font-size: 2.5rem;
+  font-weight: 500;
+
+  @media (min-width:1400px){
+    font-size: 3rem;
+  }
+}
+.cta{
+
+  @include m.btnBase();
+  transition: all 0.2s;
+
+  &:hover{
+    background-color: transparent;
+    box-shadow: none;
+    border: 1px solid #6e9fd3;
+    color: u.$SoftBlue
+    
+  }
+
+  &-m{
+    @include m.btnBase(u.$VeryDarkBlue,#eee ,#6e9fd3 );
+    font-weight: 400;
+    transition: all 0.2s;
+    
+
+    &:hover{
+      background-color: transparent;
+      box-shadow: none;
+      border: 1px solid u.$VeryDarkBlue;
+
+    }
+  }
+     
+  
+}
+.card{
+  max-width: 35rem;
+  @include m.cardBase();
+  @include m.flex(3rem , column);
+  
+
+  &__title{
+    font-size: 2.2rem;
+    color: u.$VeryDarkBlue;
+  }
+
+  &__bg{
+    width: 100%;
+  }
+
+  &__action{
+
+    .cta{
+      padding: 1.5rem  4rem;
+      font-weight: 500;
+      &:hover{
+        border: 1px solid blue;
+      }
+
+    }
+  }
+ 
+}
+

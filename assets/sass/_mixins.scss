@@ -1,0 +1,30 @@
+@use 'utils' as u;
+@mixin flex($gap:1.5rem , $direction:row){
+  display: flex;
+  flex-direction: $direction;
+  justify-content: center;
+  align-items: center;
+  gap: $gap;
+}
+@mixin btnBase($color:white,$bg:u.$SoftBlue ,$bgs:u.$SoftBlue){
+  display: inline-block;
+  color: $color;
+  background-color: $bg;
+  text-decoration: none;
+  font-size: 1.5rem;
+  
+  border-radius: 0.8rem;
+  border:1px solid transparent;
+  box-shadow: 0px 4px 5px -1px $bgs;
+  padding: 1.4rem 1.25rem;
+  
+  cursor: pointer
+}
+@mixin cardBase(){
+  width: 100%;
+  border-radius:  0.8rem;
+  border: none;
+  background-color: #ffff;
+  padding: 6rem 0 3rem;
+  box-shadow: 0px 5px 10px -4px u.$SoftBlue;
+}
